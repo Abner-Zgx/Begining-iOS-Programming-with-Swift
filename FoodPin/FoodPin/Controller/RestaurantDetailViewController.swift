@@ -14,10 +14,7 @@ class RestaurantDetailViewController: UIViewController {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var loacationLabel: UILabel!
     @IBOutlet var typeLabel: UILabel!
-    var restaurantImageName = ""
-    var restaurantName = ""
-    var restaurantLocation = ""
-    var restaurantType = ""
+    var restaurant = Restaurant()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +23,10 @@ class RestaurantDetailViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         
         // 必须在viewDidLoad之后做，否则会nil
-        restaurantImageView.image = UIImage(named: restaurantImageName)
-        nameLabel.text = restaurantName
-        loacationLabel.text = restaurantLocation
-        typeLabel.text = restaurantType
+        restaurantImageView.image = UIImage(named: restaurant.image)
+        nameLabel.text = restaurant.name
+        loacationLabel.text = restaurant.location
+        typeLabel.text = restaurant.type
     }
     
 
